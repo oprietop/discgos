@@ -1086,6 +1086,12 @@ func main() {
         q.Release, err = dg.GetRelease(id)
         check(err)
 
+        // Skip if we got no master
+        if q.Release.MasterID == 0 {
+            fmt.Printf("# Got no master for release id '%v', skipping...\n", c(1, 31, id))
+            continue
+        }
+
         // Get also the master for extra information
         q.Master, err = dg.GetMasterRelease(q.Release.MasterID)
         check(err)

@@ -7,8 +7,8 @@ Tag flac albums using the discogs.com API. Its mainly intended to be used to tag
 * It will also fetch the cover from the release.  
 * If the album directory is named using a discogs release (2287669 for example) it will force tag the album.  
 * If the discogs track number matches the directory files it will use the discogs track names, if not, the flac files track names will remain untouched.  
-* A regexp can be used to get precise queries, 'Vinyl|LP|\\d\"' for example will only show vinyl releases.  
-* A string can be use to add info like the ripper or source  
+* A regexp can be used to get precise queries, 'Vinyl|LP|\d"' for example will only show vinyl releases. (-r)  
+* A string can be use to add info like the ripper or source. (-e)  
 
 ## Usage
 ```
@@ -32,7 +32,7 @@ DIRS:
 
 ## Example
 ```
-# go run discgos.go -e oprietop@2015 -r 'Vinyl|LP|\\d\"' Sleep\ -\ Dopesmoker
+# go run discgos.go -e oprietop@2015 -r 'Vinyl|LP|\d"' Sleep\ -\ Dopesmoker
 ```
 
 ## Thanks
